@@ -20,6 +20,10 @@ for (const key in rating_button) {
 }    
 
 submit_button.addEventListener('click', ()=>{
+    if (!selectedRating) {
+        alert("Please select a rating before submitting.");
+        return;
+    }
     rating_value.innerHTML = selectedRating;
     rating_state_container.style.display="none";
     thanks_container.style.display="block";
